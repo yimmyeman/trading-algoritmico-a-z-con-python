@@ -11,7 +11,7 @@
 
 
 
-### VPS / Install Windows in your mac
+### VPS / Instalar Windows en tu Mac
 
 VPS: https://billing.virmach.com/aff.php?aff=10381
 
