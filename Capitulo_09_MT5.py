@@ -9,9 +9,9 @@ mt5.initialize()
 class MT5:
 
    def get_data(symbol, n, timeframe=mt5.TIMEFRAME_D1):
-        """ Function to import the data of the chosen symbol"""
+        """ Función para importar los datos del símbolo elegido"""
 
-        # Initialize the connection if there is not
+        # Inicializamos la conexión si no estaba activa
         mt5.initialize()
 
         # Current date extract
@@ -34,9 +34,9 @@ class MT5:
         return rates_frame
 
    def orders(symbol, lot, buy=True, id_position=None):
-       """ Send the orders """
+       """ Enviamos las órdenes """
 
-       # Initialize the connection if there is not
+        # Inicializamos la conexión si no estaba activa
        if mt5.initialize() == False:
            mt5.initialize()
 
@@ -127,7 +127,7 @@ class MT5:
       mt5.initialize()
 
       # Define the name of the columns that we will create
-      colonnes = ["ticket", "position", "symbol", "volume"]
+      columns = ["ticket", "position", "symbol", "volume"]
 
       # Go take the current open trades
       current = mt5.positions_get()
@@ -142,7 +142,7 @@ class MT5:
                                           element.type,
                                           element.symbol,
                                           element.volume],
-                                         index=colonnes).transpose()
+                                         index=columns).transpose()
            summary = pd.concat((summary, element_pandas), axis=0)
 
       return summary
@@ -150,7 +150,7 @@ class MT5:
 
    def run(symbol, long, short, lot):
 
-        # Initialize the connection if there is not
+        # Inicializamos la conexión si no estaba activa
         if mt5.initialize() == False:
             mt5.initialize()
 
